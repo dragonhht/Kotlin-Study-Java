@@ -1,0 +1,3 @@
+rootProject.name = 'Kotlin-Study-Java'
+include 'Kotlin-Study-Js'
+
