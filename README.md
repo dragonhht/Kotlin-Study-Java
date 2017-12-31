@@ -2,7 +2,7 @@
 
 ## 1、基础学习
 
-### 1、[变量](./src/main/kotlin/hht.dragon.java.variable.VariableStudy.java)
+### 1、[变量](./src/main/kotlin/hht/dragon/java/variable/VariableStudy.kt)
 
 #### 1、申明变量和值
 
