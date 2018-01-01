@@ -60,3 +60,68 @@ println(s)
 ```
 
 ### 2、流程控制语句
+
+-   [If表达式](./src/main/kotlin/hht/dragon/java/processcontrol/IfExpression.kt)
+    
+    > Kotlin中的if是一个表达式，可返回一个值， 这种情况下类似于Java中的三元表达式
+    
+    ```
+    val max = if (a > b) a else b
+    ```
+    > 也可向传统的If表达式样使用。
+    
+    -   if-else语句规则（与Java中的基本相同）
+    
+        -   if后的括号不能省略，括号内的表达式的值必须为布尔值
+        
+        -   如果条件体内只有一条语句执行，那么if后面的大括号可以省略，但建议加上大括号
+        
+        -   对于给定的if，else语句是可选的，else if也是可选的
+        
+        -   else和else if同时出现时，else必须出现在else if后面
+        
+        -   如果有多条else if语句同时出现，那么如果有一条else if语句的表达式测试成功，那么会忽略其他所有else if和else分支
+        
+        -   如果出现多个if，只有一个else的情况，else子句归属于内层的if语句
+        
+-   [when表达式](./src/main/kotlin/hht/dragon/java/processcontrol/WhenExpression.kt)
+
+    > 类似与switch-case表达式
+    
+    -   如果有多个分支需要用相同的操作，则可以将多个分支条件放在一起，用逗号分开
+    
+    ```
+    when (obj) {
+         -1, 0 -> println("-1 or 0")
+         else -> {
+             println("else")
+         }
+    }
+    ```
+    
+    -   也可以检测一个是否在一个区间或集合中
+    
+    ```kotlin
+    fun whenIn(x: Int) {
+        val nums = arrayOf(1, 2, 3, 21)
+        when (x) {
+            in 1..10 -> print("在1~10之中")
+            in nums -> print("在数组中")
+            !in 10..20 -> print("不在10~20中")
+        }
+    }
+    ```
+   
+-   [for循环](./src/main/kotlin/hht/dragon/java/processcontrol/ForWxpression.kt)
+
+    -   格式
+    
+    ```
+    for (item in collection) {
+        ...
+    }
+    ```
+
+-   while循环
+
+    > while和do..while循环和Java中的类似
