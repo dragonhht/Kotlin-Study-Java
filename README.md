@@ -146,3 +146,42 @@ println(s)
 -   super
 
 > 与Java中的super关键字类似，指持有指向其父类的引用
+
+### 4、与Java中不同的操作符
+
+-   相等与不等操作符
+
+    -   引用相等与不等：`===`和`!==`,判断两个引用是否是指向同一对象
+    
+    -   结构相等与不等：`==`和`!=`,是使用equals()进行判断
+    
+-   Elvis操作符`?:`
+
+    > 特定是和null比较，主要用来做null安全检查, 如`y = x?:0`,等价于`val y = if (x !=== null) x else 0`  
+    > Elvis操作符和Java中的三元条件运算符相似，但在Kotlin中没有三元条件运算符，Elvis操作符也为二元运算符
+    
+-   [扩展函数和扩展属性](./src/main/kotlin/hht/dragon/java/expand/Expand.kt)
+
+    -   扩展函数,大多数情况可以在顶层定义扩展，即直接在包中定义，这样便可在这整个包中使用。如下，在String中扩展notEmpty()方法
+    
+    ```kotlin
+    fun String.notEmpty(): Boolean {
+        return !this.isEmpty()
+    }
+    
+    fun main(args: Array<String>) {
+        "123".notEmpty()
+    }
+    ```
+    
+    -   扩展属性,如：`val <T> List<T>.lastIndex: Int get() = size - 1`
+    
+-   空指针安全
+
+    -   一个非空引用不能直接赋为null
+    
+    -   若需要为空，则可以在变量的类型后面加上`?`声明一个变量可空，如：`var s: String? = "ad"`
+    
+    -   若声明了一个可空的String，然后调用length属性时，编译器将报错，这是可使用安全调用`?.`和非空断言调用`!!.`, 如`s?.length`和`s!!.length`
+    
+    -   如果只对非空值进行操作，那么安全调用操作符可与`let`一起使用，如：`s?.let { println(s) }`
