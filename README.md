@@ -136,3 +136,13 @@ println(s)
 
     > 在Kotlin中throw是表达式，它的类型是特殊类型：Nothing，该类型没有值，与Java中的void的意思相同  
     > 如果把一个throw表达式的值赋给一个变量，需要显示声明类型为Nothing。
+    
+### 3、关键字
+
+-   this
+
+> 基本使用方法与Java类似，指持有当前对象的引用。但如果this没有限定符，则它指的是最内层的包含他的作用域，如果想要引用其他作用域中的this则可以使用`this@label`标签，如[事例](./src/main/kotlin/hht/dragon/java/keywords/ThisKeyword.kt)
+
+-   super
+
+> 与Java中的super关键字类似，指持有指向其父类的引用
