@@ -125,3 +125,14 @@ println(s)
 -   while循环
 
     > while和do..while循环和Java中的类似
+    
+-   break、continue和return的使用与Java中的一致,但Kotlin中也可使用`=`来直接返回一个函数的值，如`fun sum(a: Int, b: Int) = a + b`
+
+-   [标签](./src/main/kotlin/hht/dragon/java/processcontrol/LabelExpression.kt)
+
+    > 可显示的指定标签，也可隐式的使用标签，当隐式的使用标签时，该标签与接收lambda的函数同名
+    
+-   throw表达式
+
+    > 在Kotlin中throw是表达式，它的类型是特殊类型：Nothing，该类型没有值，与Java中的void的意思相同  
+    > 如果把一个throw表达式的值赋给一个变量，需要显示声明类型为Nothing。
