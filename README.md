@@ -182,6 +182,23 @@ println(s)
     
     -   若需要为空，则可以在变量的类型后面加上`?`声明一个变量可空，如：`var s: String? = "ad"`
     
-    -   若声明了一个可空的String，然后调用length属性时，编译器将报错，这是可使用安全调用`?.`和非空断言调用`!!.`, 如`s?.length`和`s!!.length`
+    -   若声明了一个可空的String，然后调用length属性时，编译器将报错，这是可使用安全调用`?.`和非空断言调用`!!.`, 如`s?.length`和`s!!.length`。可空变量的安全调用符`y?.length`等价于是Java中的`y != null ? Integer.valueOf(yy.length()) : null`，可空变量的断言调用`y!!.length`等价的Java代码为：`if (y == null) { Internsics.throwNpe(); } return Integer.valueOf(y.length());`
     
     -   如果只对非空值进行操作，那么安全调用操作符可与`let`一起使用，如：`s?.let { println(s) }`
+    
+### 5、异常捕获
+
+-   Kotlin中仍然可使用`try...catch`捕获并处理异常
+
+### 6、Unit类型
+
+> Kotlin中的Unit类型实现了与Java中的void一样的功能。不同的是，当一个函数没有返回值时，我们用Unit来表示这个特征，而不是null。  
+> 大多数情况下，我们并不需要显示地返回Unit类型，或者声明一个函数的返回类型为Unit。编译器会自动推断它
+
+### 7、Nothing类型
+
+> Kotlin中没有Java和C中的类似函数灭有返回值的标记void，但是拥有一个对应的Nothing。在Java中，返回void的方法，其返回值void是无法被访问到的。
+
+-   Unit和Noting的区别
+
+    > Unit类型表达式计算结果的返回值类型是Unit。Noting类型的表达式计算结果是永远不会被返回的。
