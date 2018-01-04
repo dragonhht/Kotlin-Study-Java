@@ -202,3 +202,56 @@ println(s)
 -   Unit和Noting的区别
 
     > Unit类型表达式计算结果的返回值类型是Unit。Noting类型的表达式计算结果是永远不会被返回的。
+    
+## 2、 集合类
+
+> Kotlin的集合类分为：`可变集合类`和`不可变集合类`, 集合类型主要分为：`List`、`set`和`map`
+
+### 1、List
+
+#### 1、创建
+
+-   不可变集合类List(ReadOnly, Immutable)
+    
+    > 使用`listOf`函数构建一个不可变的List
+    
+    -   使用listOf()构建一个没有元素的List, 该情况下必须指定类型
+        `val list: List<Int> = listOf()`
+        
+    -   使用listOf创建一个只有1个元素的List
+        `val list_1 = listOf(1)`
+        
+    -   使用listOf创建一个有多个元素的List
+        `val list_2 = listOf(0, 1, 2)`
+        
+    -   使用arrayListOf创建一个list
+        `val list_3 = arrayListOf(9, 3, 4)` 
+        
+-   可变集合类MutableList(Read&Write, Mutable), 与不可变的List相比，添加了add/addAll、remove/removeAll/removeAt、set、clear、retainAll等更新修改的操作
+
+    > 创建可变List对象与创建不可比and额List类似，前面加上`mutable`
+    
+    -   使用mutableListOf创建可变的List
+        `val list = mutableListOf(123, 23)`
+        
+    -   使用arrayListOf创建可变的List
+        `val list_3 = arrayListOf(9, 3, 4)` 
+        
+#### 2、遍历
+
+-   使用`Iterator`迭代器
+    ```
+    // 使用迭代器遍历
+            val iterator = list.iterator()
+            while (iterator.hasNext()) {
+                println(iterator.next())
+            }
+    ```
+
+-   使用`forEach`遍历
+    ```
+    list.forEach {
+                println(it)
+            }
+    ```
+    还可使用`list.forEach(::println)`
