@@ -255,3 +255,57 @@ println(s)
             }
     ```
     还可使用`list.forEach(::println)`
+    
+## 3、面向对象编程
+
+### 1、类与构造器
+
+> Kotlin中的类与Java中类似，使用`class`声明
+
+-   构造函数
+
+    > Kotlin中，一个类可以有一个主构造函数，同时也可拥有一个或多个次构造函数
+    
+    -   主构造函数
+    
+        > 主构造函数是类头的一部分，直接放在类名后面, 如下所示。如果主构造函数没有任何注解或者可见性修饰符，可以省略constructor关键字，如果构造函数有注解或可见性修饰符，constructor关键词则是必须的，并且这些修饰符在它前面。主构造函数中声明的属性可以是可变的或不可变的。主构造函数不能包含任何代码。初始化的代码可以放在以`init`关键字作为前缀的初始化块中，如下所示
+        
+        ```kotlin
+        open class Student constructor(var name: String, var age: Int) {
+        
+            init {
+                println("name is $name, and age is $age")
+            }
+        
+        }
+        ```
+        
+    -   次构造函数
+    
+        > 在类体中，可以声明前缀有`constructor`的次构造函数，次构造函数不能有声明val或var。如下所示
+        
+        ```
+        class Teacher {
+            
+            constructor(name: String) {
+                
+            }
+            
+            constructor(name: String, age: Int) {
+                
+            }
+            
+        }
+        ```
+        
+    > 如果一个非抽象类没有声明任何构造函数，他会有一个生成的不带参数的主构造函数。构造函数的可见性是public
+    
+    -   私有构造函数
+    
+        声明如下：
+        
+        ```kotlin
+        class Test private constructor(){
+        }
+        ```
+        
