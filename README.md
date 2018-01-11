@@ -331,4 +331,35 @@ println(s)
         
 -   接口
 
+    -   [定义接口](./src/main/kotlin/hht/dragon/java/interfaces/InterfaceDefinition.kt)：`interface InterfacesName`
+    
+    > Kotlin的接口可以包含抽象的方法及方法的实现
+    
+    -   [实现接口](./src/main/kotlin/hht/dragon/java/interfaces/InterfaceImpl.kt)
+    
+    > 使用冒号`:`来实现一个接口，如果有一个多个用逗号隔开
+    
+-   [继承](./src/main/kotlin/hht/dragon/java/extend/ExtendClass.kt)
+
+    -   [`open`关键字](./src/main/kotlin/hht/dragon/java/extend/OpenClass.kt)
+        
+        > 当一个类使用open关键字修饰后，这样的类便可被继承。在Kotlin中若果方法需要被重写则应在方法上标注`open`关键字
+
+> 在子类中同实现接口一样，使用冒号进行继承,  
+> 如果父类有构造函数，那么必须在子类的主构造函数中进行继承，没有的话则可以选择主构造函数后二级构造函数
+
+```
+class ExtendClass : OpenClass() {
+
+    override fun save() {
+        super.save()
+    }
+}
+
+class ExtendClassTwo(name: String) : Base(name) {
+
+}
+```
+
+    
     
