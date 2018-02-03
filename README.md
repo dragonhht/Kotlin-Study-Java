@@ -346,7 +346,7 @@ println(s)
         > 当一个类使用open关键字修饰后，这样的类便可被继承。在Kotlin中若果方法需要被重写则应在方法上标注`open`关键字
 
 > 在子类中同实现接口一样，使用冒号进行继承,  
-> 如果父类有构造函数，那么必须在子类的主构造函数中进行继承，没有的话则可以选择主构造函数后二级构造函数
+> 如果父类有构造函数，那么必须在子类的主构造函数laingge中进行继承，没有的话则可以选择主构造函数后二级构造函数
 
 ```
 class ExtendClass : OpenClass() {
@@ -361,5 +361,11 @@ class ExtendClassTwo(name: String) : Base(name) {
 }
 ```
 
-    
-    
+-   [枚举](./src/main/kotlin/hht/dragon/java/enums/Color.kt)
+
+-   [协程](./src/main/kotlin/hht/dragon/java/thread/Thread.kt)
+
+
+## 4、[Kotlin与Java互操作](./src/test/kotlin/hht/dragon/java/withjava/UsingJava.kt)
+
+-   [调用静态方法与反射](./src/main/kotlin/hht/dragon/java/withjava/WithJava.kt)
